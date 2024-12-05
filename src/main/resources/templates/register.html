@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro de Venta de Entradas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fondo de página tipo Matrix */
+        body {
+            background-image: url('/images/pez.png'); /* Ruta relativa desde static */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #00ff00; /* Color verde Matrix */
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Contenedor del formulario */
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Efecto de sombra verde */
+        }
+
+        /* Etiquetas y campos de formulario */
+        .form-label {
+            color: #00ff00; /* Texto verde Matrix */
+        }
+
+        .form-control {
+            background-color: black; /* Fondo oscuro */
+            color: #00ff00; /* Texto verde */
+            border: 1px solid #00ff00; /* Borde verde */
+        }
+
+        .form-control:focus {
+            background-color: black;
+            color: #00ff00;
+            border-color: #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        /* Botón de enviar */
+        .btn-primary {
+            background-color: #00ff00;
+            color: black;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00ff00;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: black;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        /* Títulos */
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 0 0 15px #00ff00; /* Efecto brillante verde */
+        }
+
+        /* Centrado y espaciado */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="text-center mb-4">Registro para Evento de Running</h1>
+            <form action="#" th:action="@{/register}" method="post">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="dni" class="form-label">Número de DNI</label>
+                    <input type="text" class="form-control" id="dni" name="dni" required>
+                </div>
+                <div class="mb-3">
+                    <label for="residence" class="form-label">Lugar de Residencia</label>
+                    <input type="text" class="form-control" id="residence" name="residence" required>
+                </div>
+                <div class="mb-3">
+                    <label for="emergencyContact" class="form-label">Número de Contacto de Emergencia</label>
+                    <input type="text" class="form-control" id="emergencyContact" name="emergencyContact" required>
+                </div>
+                <div class="mb-3">
+                    <label for="personalPhone" class="form-label">Número de Teléfono Personal</label>
+                    <input type="text" class="form-control" id="personalPhone" name="personalPhone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="bloodType" class="form-label">Tipo de Sangre</label>
+                    <input type="text" class="form-control" id="bloodType" name="bloodType" required>
+                </div>
+                <div class="mb-3">
+                    <label for="allergies" class="form-label">Alergias</label>
+                    <input type="text" class="form-control" id="allergies" name="allergies">
+                </div>
+                <div class="mb-3">
+                    <label for="runningKm" class="form-label">Número de Km a Correr</label>
+                    <input type="number" class="form-control" id="runningKm" name="runningKm" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
